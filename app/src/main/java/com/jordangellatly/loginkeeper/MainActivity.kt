@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener {
             checkIfEmailIsValid()
+            checkPasswordLength()
         }
     }
 
@@ -38,6 +39,15 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "Valid email address", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(applicationContext, "Please try again", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun checkPasswordLength() {
+        val password: String = et_password.text.toString()
+        if (password.length >= 6) {
+            Toast.makeText(applicationContext, "Password okay", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(applicationContext, "Password is not long enough", Toast.LENGTH_SHORT).show()
         }
     }
 }
