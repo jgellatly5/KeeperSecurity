@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LoginKeeper</string>
+    <string name="account_creation_prompt">Don\'t have an account? Create</string>
 </resources>

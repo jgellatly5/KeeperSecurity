@@ -50,80 +50,94 @@
         android:id="@+id/email_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="240dp"
+        android:fontFamily="@font/overpass_thin"
         android:text="Email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="@font/overpass_thin"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/overpass_thin"
+        android:hint="melanie.russell@example.com"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_label"
         app:layout_constraintVertical_bias="0.0"
-        android:fontFamily="@font/overpass_thin"
-        android:hint="melanie.russell@example.com"/>
+        android:background="@drawable/edit_text_style"
+        android:inputType="textEmailAddress"/>
 
     <TextView
         android:id="@+id/password_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/overpass_thin"
         android:text="Master Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_email"
-        app:layout_constraintVertical_bias="0.0"
-        android:fontFamily="@font/overpass_thin"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/overpass_thin"
+        android:hint="Enter Master Password"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_label"
         app:layout_constraintVertical_bias="0.0"
-        android:fontFamily="@font/overpass_thin"
-        android:hint="Enter Master Password"/>
+        android:background="@drawable/edit_text_style"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/overpass_thin"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_password"
         app:layout_constraintVertical_bias="0.034"
-        android:fontFamily="@font/overpass_thin"/>
+        android:textColor="@color/black"
+        android:textAllCaps="false"/>
 
     <TextView
         android:id="@+id/tv_create_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Don't have an account? Create"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        android:fontFamily="@font/overpass_thin"
+        android:text="@string/account_creation_prompt"
         android:textAlignment="center"
-        android:fontFamily="@font/overpass_thin"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
     <TextView
         android:id="@+id/tv_need_help"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/overpass_thin"
         android:text="Need Help?"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -131,14 +145,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_create_account"
         app:layout_constraintVertical_bias="0.133"
-        android:fontFamily="@font/overpass_thin"/>
+        android:textColor="@color/yellow"/>
 
     <Button
         android:id="@+id/btn_enterprise_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/overpass_thin"
         android:text="Use Enterprise SSO Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -146,12 +161,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_need_help"
         app:layout_constraintVertical_bias="0.163"
-        android:fontFamily="@font/overpass_thin"/>
+        android:textColor="@color/yellow"
+        android:textAllCaps="false"/>
 
     <TextView
         android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/overpass_thin"
         android:text="© 2020 Keeper Security, Inc."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -159,6 +176,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_enterprise_login"
         app:layout_constraintVertical_bias="0.173"
-        android:fontFamily="@font/overpass_thin"/>
+        android:textColor="@color/grey"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
