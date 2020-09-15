@@ -19,14 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val spannable = SpannableString(getString(R.string.account_creation_prompt))
-        spannable.setSpan(
-            ForegroundColorSpan(ContextCompat.getColor(this, R.color.yellow)),
-            23,
-            29,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
-        tv_create_account.text = spannable
+        formatSpannable()
 
         btn_login.setOnClickListener {
             if (checkIfEmailIsValid() && checkPasswordLength()) {
@@ -37,16 +30,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun formatSpannable() {
+        val spannable = SpannableString(getString(R.string.account_creation_prompt))
+        spannable.setSpan(
+            ForegroundColorSpan(ContextCompat.getColor(this, R.color.yellow)),
+            23,
+            29,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        tv_create_account.text = spannable
+    }
+
     private fun checkIfEmailIsValid(): Boolean {
         val email: String = et_email.text.toString().trim()
         val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
         return if (email.matches(emailPattern.toRegex()) && email.isNotEmpty()) {
-            email_label.text = "Email"
-            email_label.setTextColor(Color.BLACK)
+            email_label.text = getString(R.string.email)
+            email_label.setTextColor(Color.WHITE)
             check_icon_email.visibility = View.VISIBLE
             true
         } else {
-            email_label.text = "This is not a valid email address. Please try again."
+            email_label.text = getString(R.string.email_error)
             email_label.setTextColor(Color.RED)
             check_icon_email.visibility = View.INVISIBLE
             false
@@ -56,12 +60,12 @@ class MainActivity : AppCompatActivity() {
     private fun checkPasswordLength(): Boolean {
         val password: String = et_password.text.toString()
         return if (password.length >= 6) {
-            password_label.text = "Master Password"
-            password_label.setTextColor(Color.BLACK)
+            password_label.text = getString(R.string.master_password)
+            password_label.setTextColor(Color.WHITE)
             check_icon_password.visibility = View.VISIBLE
             true
         } else {
-            password_label.text = "Password must be at least 6 characters long. Please try again."
+            password_label.text = getString(R.string.password_error)
             password_label.setTextColor(Color.RED)
             check_icon_password.visibility = View.INVISIBLE
             false
